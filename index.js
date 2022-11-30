@@ -17,17 +17,17 @@ async function main(){
 
     const salary= await collection.find({salary:{$gt:30000}}).toArray()
     console.log(salary);
-    console.log("data available for salary more than 30000");
+    console.log("collections available for salary more than 30000");
 
 
     const exp= await collection.find({overallExp:{$gte:2}}).toArray()
     console.log(exp);
-    console.log("exp more than 2 years data available");
+    console.log("collections exp available more than 2 years");
 
 
     const GradExp = await collection.find({yearGrad:{$gt:"2015"},overallExp:{$gte:"2"}}).toArray()
     console.log(GradExp);
-    console.log("data with year of graduation 2025 and experience more than 2 years");
+    console.log("collections with year of graduation 2025 and experience more than 2 years");
 
 
      const setSalary=await collection.updateMany({salary:{$gt:"70000"}},{$set:{salary:"65000"}})
@@ -37,7 +37,7 @@ async function main(){
 
 const deleteY = await collection.deleteMany({lastCompany:"Y"})
 console.log(deleteY);
-console.log("delete the details of company whosw last name is Y");
+console.log("delete the details of company whos last name is Y");
 }
 
 main()
